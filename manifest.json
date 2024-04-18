@@ -1,0 +1,7 @@
+{
+    "name": "Test App",
+    "description": "Test App for test app",
+    "start_url": "/",
+    "lang": "ru-RU",
+    "display": "standalone"
+  }
