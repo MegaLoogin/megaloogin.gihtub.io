@@ -72,22 +72,41 @@
         <div class="container">
             <div class="text-center mt-5">
                 <button id="installApp">Install</button>
+                <a href="app.html" target="_blank"><button id="openApp">Open PWA</button></a>
             </div>
         </div>
         <script>
+            let PWAisInstalled;
+            const installApp = document.getElementById('installApp');
+            const openApp = document.getElementById('openApp');
+
+            if ('getInstalledRelatedApps' in navigator) { 
+                const relatedApps = await navigator.getInstalledRelatedApps(); 
+                PWAisInstalled = relatedApps.length > 0; 
+
+                if (PWAisInstalled) { 
+                    installApp.classList.add('hidden'); 
+                }
+            }
             let deferredPrompt;
             window.addEventListener('beforeinstallprompt', (e) => {
                 deferredPrompt = e;
             });
 
-            const installApp = document.getElementById('installApp');
             installApp.addEventListener('click', async () => {
                 if (deferredPrompt !== null) {
                     deferredPrompt.prompt();
                     const { outcome } = await deferredPrompt.userChoice;
                     if (outcome === 'accepted') {
                         deferredPrompt = null;
+                        PWAisInstalled = true;
                     }
+                }
+            });
+
+            openApp.addEventListener('click', async () => {
+                if(!PWAisInstalled){
+                    
                 }
             });
         </script>

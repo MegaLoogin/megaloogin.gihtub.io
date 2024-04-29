@@ -2,6 +2,7 @@
     "name": "Test App",
     "description": "Test App for test app",
     "start_url": "/app.html",
+    "scope": ".",
     "lang": "ru-RU",
     "display": "standalone",
     "icons": [
