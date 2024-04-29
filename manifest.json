@@ -2,7 +2,11 @@
     "name": "Test App",
     "description": "Test App for test app",
     "start_url": "/app.html",
-    "scope": ".",
+    "scope": "/",
+    "related_applications": [{
+        "platform": "webapp",
+        "url": "/manifest.json"
+    }],
     "lang": "ru-RU",
     "display": "standalone",
     "icons": [
