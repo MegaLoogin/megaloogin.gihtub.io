@@ -81,7 +81,7 @@
                 .then(function(registration) {
                     var subscribeOptions = {
                     userVisibleOnly: true,
-                    applicationServerKey: btoa(
+                    applicationServerKey: urlBase64ToUint8Array(
                         'BBbpHg7Zhp6WsJIr1HOxK-uY5sE22zRTAGksZ83P0gfuLGVpuvMVfbUFgzjQOSdVpPX0I0h9Ld6dRk8JDorzLAs'
                     )
                     };
