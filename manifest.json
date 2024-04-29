@@ -1,7 +1,7 @@
 {
     "name": "Test App",
     "description": "Test App for test app",
-    "start_url": "/",
+    "start_url": "/app.html",
     "lang": "ru-RU",
     "display": "standalone",
     "icons": [
