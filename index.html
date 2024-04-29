@@ -72,8 +72,8 @@
         <div class="container">
             <div class="text-center mt-5">
                 <button id="installApp">Install</button>
-                <p id="installing">Installing...</p>
-                <a id="openApp" href="app.html" target="_blank"><button>Open</button></a>
+                <p id="installing" style="display: none;">Installing...</p>
+                <a id="openApp" style="display: none;" href="app.html" target="_blank"><button>Open</button></a>
             </div>
         </div>
         <script>
@@ -110,9 +110,11 @@
                 }
 
                 window.addEventListener("appinstalled", () => {
-                    installApp.style.display = 'none';
-                    installing.style.display = 'none';
-                    openApp.style.display = '';
+                    setTimeout(() => {
+                        installApp.style.display = 'none';
+                        installing.style.display = 'none';
+                        openApp.style.display = '';
+                    }, 10000);
                 });
             })();
         </script>
