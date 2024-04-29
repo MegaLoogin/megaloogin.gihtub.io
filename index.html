@@ -97,16 +97,12 @@
                         const deferredPrompt = e;
 
                         installApp.addEventListener('click', () => {
-
                             deferredPrompt.prompt();
 
                             deferredPrompt.userChoice.then(choiceResult => {
                                 if (choiceResult.outcome === 'accepted') {
-                                    console.log('App installed');
                                     installApp.style.display = 'none';
-                                    installing.style.display = 'inline';
-                                } else {
-                                    console.log('App installation declined');
+                                    installing.style.display = '';
                                 }
                             });
                         });
@@ -116,7 +112,7 @@
                 window.addEventListener("appinstalled", () => {
                     installApp.style.display = 'none';
                     installing.style.display = 'none';
-                    openApp.style.display = 'none';
+                    openApp.style.display = '';
                 });
             })();
         </script>
