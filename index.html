@@ -72,13 +72,15 @@
         <div class="container">
             <div class="text-center mt-5">
                 <button id="installApp">Install</button>
-                <a href="app.html" target="_blank"><button id="openApp">Open PWA</button></a>
+                <a id="openApp" href="app.html" target="_blank"><button>Open PWA</button></a>
             </div>
         </div>
         <script>
             (async () => {
                 const relatedApps = await navigator.getInstalledRelatedApps();
                 const PWAisInstalled = relatedApps.length > 0;
+
+                console.log(relatedApps);
 
                 const installApp = document.getElementById('installApp');
                 installApp.style.display = PWAisInstalled ? 'none' : '';
