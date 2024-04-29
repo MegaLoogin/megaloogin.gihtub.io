@@ -101,6 +101,10 @@
 
                         await fetch('https://6004-176-52-23-7.ngrok-free.app/subscribe', {
                             "body": JSON.stringify({ "subscription": onSubscribe, "id": "1234" }),
+                            "headers": {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json'
+                            },
                             "method": "POST"
                         })
                     }catch(e){
