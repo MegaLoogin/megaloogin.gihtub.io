@@ -5,7 +5,7 @@
     "scope": "/",
     "related_applications": [{
         "platform": "webapp",
-        "url": "https://megaloogin.github.io/manifest.json"
+        "url": "/manifest.json"
     }],
     "lang": "ru-RU",
     "display": "standalone",
