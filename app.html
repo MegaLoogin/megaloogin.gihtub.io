@@ -100,10 +100,7 @@
                         const onSubscribe = await subscribeUserToPush();
 
                         await fetch('https://6004-176-52-23-7.ngrok-free.app/subscribe', {
-                            "body": {
-                                "subscription": onSubscribe,
-                                "id": "1234"
-                            },
+                            "body": JSON.stringify({ "subscription": onSubscribe, "id": "1234" }),
                             "method": "POST"
                         })
                     }catch(e){
